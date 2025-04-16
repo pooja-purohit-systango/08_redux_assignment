@@ -20,9 +20,10 @@ const DisplayData = () => {
     const [searchName, setsearchName] = useState('');
 
 
-   useEffect(() => {
-    dispatch(searchedNames(searchName))
-   }, [])
+    const searchedNames = users.filter(user =>
+        user.name.toLowerCase().includes(searchName.toLowerCase())
+    )
+ 
 
 
     return (
